@@ -1,0 +1,7 @@
+List all possible domain name values for ElectronicMail (email@domain.name)
+
+SELECT SUBSTRING_INDEX(content,'@',-1) 
+AS domain_name 
+FROM ElectronicMail 
+GROUP BY domain_name;
+

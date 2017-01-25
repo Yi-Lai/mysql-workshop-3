@@ -1,0 +1,16 @@
+List all of the phone numbers for Jenkins, Charlotte
+
+SELECT content, Entry.firstName, Entry.lastName
+        FROM Phone
+        JOIN Entry 
+        ON Phone.entryId=Entry.id
+        WHERE Entry.lastName = "Jenkins" AND Entry.firstName = "Charlotte";
+        
+        
++----------------+-----------+----------+
+| content        | firstName | lastName |
++----------------+-----------+----------+
+| (110) 167-3420 | Charlotte | Jenkins  |
+| (605) 175-1334 | Charlotte | Jenkins  |
++----------------+-----------+----------+
+2 rows in set (0.00 sec)

@@ -1,0 +1,14 @@
+1. List all of the countries with respective occurence totals in DESC order
+
+
+mysql> SELECT country,count(*) 
+       AS numCount FROM Address 
+       GROUP BY country 
+       ORDER BY numCount desc;
+       
+2. Country names should all appear lowercase
+
+mysql> SELECT lcase(country),count(*) 
+       AS numCount FROM Address 
+       GROUP BY country 
+       ORDER BY numCount desc;

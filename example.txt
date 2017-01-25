@@ -1,0 +1,45 @@
+on git- 
+npm install mysql;
+
+node node-mysql.js // to use node in git
+
+create new file called " node-mysql.js"
+//In the file
+
+var mysql = require("mysql");
+
+var connection = mysql.createConnection({
+    host : 'localhost',
+    user : 'name',
+    password : ' ',
+    database : 'name_of_database',
+});
+
+var result = connection.query("SHOW DATABASES",functino(eer,result){
+    if(err){
+    console.log(err);
+    }
+    else{
+        result.forEach(function(row){
+        console.log("Database #" + i, row.Database); 
+        }
+    }
+})
+
+//other sample; 
+
+var result = connection.query("SELECT * FROM AddressBook LIMIT 10",functino(eer,result){
+    if(err){
+    console.log(err);
+    }
+    else{
+       console.log(JSON.stringify(result,null,4)); 
+        }
+    }
+})x
+
+
+prompt.get('username',functino(err,answers){
+    var username = answers.username
+    
+    # = comment; 

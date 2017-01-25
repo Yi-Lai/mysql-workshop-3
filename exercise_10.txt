@@ -1,0 +1,46 @@
+Transform all work emails into home emails and vice versa. BE CAREFUL ;)
+
+mysql> DROP TABLE ElectronicMail;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> CREATE TABLE ElectronicMail(
+    -> id int auto_increment primary key,
+    -> entryId int,
+    -> type ENUM("home", "work", "other","temp"),
+    -> content varchar(255));
+Query OK, 0 rows affected (0.00 sec) 
+
+mysql> UPDATE ElectronicMail 
+    -> SET type = "temp"
+    -> WHERE ElectronicMail.type = "work";
+Query OK, 690 rows affected (0.01 sec)
+Rows matched: 690  Changed: 690  Warnings: 0
+
+mysql> UPDATE ElectronicMail 
+    -> SET type = "work"
+    -> WHERE ElectronicMail.type = "home";
+Query OK, 920 rows affected (0.01 sec)
+Rows matched: 920  Changed: 920  Warnings: 0
+
+mysql> UPDATE ElectronicMail 
+    -> SET type = "work"
+    -> WHERE ElectronicMail.type = "temp";
+Query OK, 690 rows affected (0.01 sec)
+Rows matched: 690  Changed: 690  Warnings: 0
+
+mysql> DROP ElectronicMail;
+
+mysql> CREATE TABLE ElectronicMail(
+    -> id int auto_increment primary key,
+    -> entryId int,
+    -> type ENUM("home", "work", "other"),
+    -> content varchar(255));
+Query OK, 0 rows affected (0.01 sec)
+
+
+mysql> source data/import-entry.sql; 
+
+
+
+
+

@@ -1,0 +1,10 @@
+List how many phones were landlines, cellular and fax for entries with birthdates between October 1950 and October 1960
+
+SELECT 
+(COUNT('landline')+
+COUNT('cellular')+
+COUNT('fax')) as 'Total'
+FROM Phone
+JOIN Entry
+ON Phone.entryId = Entry.id
+WHERE Entry.birthday BETWEEN '1950-10-01' AND '1960-10-01'; 
